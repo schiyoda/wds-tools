@@ -6,3 +6,14 @@ Migrate all documents and training data from one collection to another collectio
     $ git clone https://github.com/schiyoda/wds-tools.git
     $ mkdir docs
     $ mkdir trains
+    $ npm install
+
+Change config files.
+
+### Export documents
+    $ node exportDocs.js
+    
+### Import documents
+    # node importDocs.js
+    
+###
