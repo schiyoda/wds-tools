@@ -13,7 +13,9 @@ Change config files.
 Export all documents in a collection to local 'docs' direcoty as JSON file
     
     $ node exportDocs
-    
+
+(*) some
+
 ### Import documents 
 Import all JSON files in a local 'docs' directory to a collection
 
