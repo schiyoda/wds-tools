@@ -15,14 +15,3 @@ csv()
     console.log('end')
 })
 
-/* 
-converter.on("end_parsed", function (jsonArray) {
-    for(var i=0; i<jsonArray.length; i++){
-        fs.writeFile(jsons + 'json-' + i + '.json', JSON.stringify(jsonArray[i],null,'    '));
-        //console.log(jsonArray[i]);
-    }
-    console.log("Converted to JSON files.");
-});
- 
-require("fs").createReadStream(process.argv[2]).pipe(converter);
-*/
