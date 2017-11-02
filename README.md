@@ -34,7 +34,7 @@ Import training data in local 'trains' directory to a collction
     $ node importTrains
 
 ### Create documents from CSV file
-Create JSONs from CSV files and create documents in a collection
+Create JSON files from CSV file and create documents in a collection
 
     $ rm docs/*
     $ node convertCsv2Json filename.csv
