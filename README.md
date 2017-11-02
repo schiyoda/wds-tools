@@ -33,7 +33,8 @@ Import training data in local 'trains' directory to a collction
 Delete all documents from a collection
 
     $ node deleteDocs
-    
+
+### Delete training data
 Delete all taining data from a collection
 
     $ node deleteTrains
