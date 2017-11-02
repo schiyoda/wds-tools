@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csvtojson": "^1.1.9",
     "fs": "0.0.1-security",
     "readline-sync": "^1.4.7",
     "request": "^2.83.0",
