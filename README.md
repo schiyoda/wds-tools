@@ -10,7 +10,8 @@
 Change config files.
 
 ### Export documents
-Export all documents in a collection to local 'docs' direcoty as JSON files
+Export all documents in a collection to local 'docs' direcoty as JSON file
+    
     $ node exportDocs
     
 ### Import documents 
