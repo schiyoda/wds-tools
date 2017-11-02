@@ -1,5 +1,4 @@
-# WDS Tools
-Migrate all documents and training data from one collection to another collection.
+# Node.js Tools for Watson Discovery Service
 
 ## How to use
 ### Install
@@ -11,13 +10,24 @@ Migrate all documents and training data from one collection to another collectio
 Change config files.
 
 ### Export documents
-    $ node exportDocs.js
+Export all documents in a collection to local 'docs' direcoty as JSON files
+    $ node exportDocs
     
-### Import documents
-    $ node importDocs.js
+### Import documents 
+Import all JSON files in a local 'docs' directory to a collection
+    $ node importDocs
     
 ### Export training data
-    $ node exportTrains.js
+Export training data in a collection to local 'trains' directoty as JSON files
+    $ node exportTrains
     
 ### Import training data
-    $ node importTrains.js
+Import training data in local 'trains' directory to a collction
+    $ node importTrains
+
+### Delete documents
+Delete all documents from a collection
+    $ node deleteDocs
+    
+Delete all taining data from a collection
+    $ node deleteTrains
