@@ -14,6 +14,10 @@ Change config files.
     $ node exportDocs.js
     
 ### Import documents
-    # node importDocs.js
+    $ node importDocs.js
     
-###
+### Export training data
+    $ node exportTrains.js
+    
+### Import training data
+    $ node importTrains.js
