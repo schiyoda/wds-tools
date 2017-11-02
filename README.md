@@ -14,13 +14,15 @@ Export all documents in a collection to local 'docs' direcoty as JSON file
     
     $ node exportDocs
 
-(*) some
+(*) Sometimes, the number of exported documents is not the same as collection for some reason. You can try multiple times until the number is the same.
 
 ### Import documents 
 Import all JSON files in a local 'docs' directory to a collection
 
     $ node importDocs
-    
+
+(*) Sometimes, the number of imported documents is not the same as the number of files for some reason(network error etc). You can try multiple times until the number is the same.
+
 ### Export training data
 Export training data in a collection to local 'trains' directoty as JSON files
 
