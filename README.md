@@ -41,11 +41,11 @@ Create JSONs from CSV files and create documents in a collection
     $ node createDocs
 
 ### Delete documents
-Delete all documents from a collection
+Delete all documents in a collection
 
     $ node deleteDocs
 
 ### Delete training data
-Delete all taining data from a collection
+Delete all taining data in a collection
 
     $ node deleteTrains
