@@ -81,8 +81,12 @@ function checkStatus(docid){
                     url: url.replace(/DOC_ID/g, docid),
                     headers:headers
                 }, function(error, response, body){
+                  if(error){
+                    reject(error);
+                  }else{
                     var status = JSON.parse(body).status;
                     resolve(status);
+                  }
                 });
             })
             .then(function(status) {
@@ -94,6 +98,9 @@ function checkStatus(docid){
                 } else {
                     loop();
                 }
+            })
+            .catch(function(error){
+                console.log(error);
             });
         }
     loop();
@@ -110,4 +117,3 @@ Promise.resolve()
     .catch(function(error){
         console.log(error);
     });
-
