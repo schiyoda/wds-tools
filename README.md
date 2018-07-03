@@ -3,6 +3,7 @@
 ## How to use
 ### Install
     $ git clone https://github.com/schiyoda/wds-tools.git
+    
     $ mkdir docs
     $ mkdir trains
     $ npm install
