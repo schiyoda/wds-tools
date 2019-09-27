@@ -1,15 +1,14 @@
-var DiscoveryV1 = require('watson-developer-cloud/discovery/v1');
+var DiscoveryV1 = require('ibm-watson/discovery/v1');
 var readlineSync = require('readline-sync');
 var config = require('./config_to');
 
 var numDocsPerQuery = 100;
 
 var discovery = new DiscoveryV1({
-	  url: config.url,
-	  username: config.username,
-	  password: config.password,
-	  version_date: DiscoveryV1.VERSION_DATE_2017_08_01
-	});
+    iam_apikey: config.apikey,
+    url: config.url,
+    version: '2019-04-30'
+});
 
 function checkCollection(){
     return new Promise(function(resolve,reject){

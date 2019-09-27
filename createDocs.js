@@ -1,13 +1,12 @@
-var DiscoveryV1 = require('watson-developer-cloud/discovery/v1');
+var DiscoveryV1 = require('ibm-watson/discovery/v1');
 var fs = require('fs');
 var request = require('request');
 var config = require('./config_to');
 
 var discovery = new DiscoveryV1({
-          url: config.url,
-          username: config.username,
-          password: config.password,
-          version_date: DiscoveryV1.VERSION_DATE_2017_08_01
+    iam_apikey: config.apikey,
+    url: config.url,
+    version: '2019-04-30'
 });
 
 var files;
@@ -53,10 +52,11 @@ function postDocument(file){
     return new Promise(function(resolve, reject){
         var text = fs.readFileSync(file, 'utf-8');
         var json = JSON.parse(text);
-        discovery.addJsonDocument({
+        discovery.addDocument({
             environment_id: config.envid,
             collection_id: config.colid,
-            file: json
+            file: json,
+            file_content_type: 'application/json'
         }, function(err, response){
             if(err){
                 console.error(err);
@@ -67,26 +67,20 @@ function postDocument(file){
     });
 }
 
-var url = config.url + '/v1/environments/' +config.envid+ '/collections/' +config.colid+ '/documents/DOC_ID?version=2017-10-16';
-var auth = new Buffer(config.username + ':' + config.password).toString('base64');
-var headers = {
-    'Authorization' : 'Basic ' + auth
-};
-
 function checkStatus(docid){
     return new Promise(function(res, rej) {
         function loop() {
             return new Promise(function(resolve, reject) {
-                request.get({
-                    url: url.replace(/DOC_ID/g, docid),
-                    headers:headers
-                }, function(error, response, body){
-                  if(error){
-                    reject(error);
-                  }else{
-                    var status = JSON.parse(body).status;
-                    resolve(status);
-                  }
+                discovery.getDocumentStatus({
+                    environment_id: config.envid,
+                    collection_id: config.colid,
+                    document_id: docid
+                }, function(err, response){
+                    if(err){
+                        console.error(err);
+                    }else{
+                        resolve(response.status);
+                    }
                 });
             })
             .then(function(status) {
