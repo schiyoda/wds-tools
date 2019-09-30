@@ -11,9 +11,9 @@
   "dependencies": {
     "csvtojson": "^1.1.9",
     "fs": "0.0.1-security",
+    "ibm-watson": "^4.5.1",
     "readline-sync": "^1.4.7",
     "request": "^2.83.0",
-    "then-request": "^4.1.0",
-    "watson-developer-cloud": "^2.41.1"
+    "then-request": "^4.1.0"
   }
 }
